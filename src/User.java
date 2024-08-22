@@ -41,13 +41,13 @@ public class User {
 
     //Methods
     public void showInfoUser() {
-        System.out.println("Name user: " + name + " address: " + address);
+        System.out.println("Name user: " + name + "\n" + "Your address: " + address);
         if (borrowedBooks.isEmpty()){
             System.out.println("No borrowed books");
         } else {
             System.out.println("Borrowed books: ");
             for (Book book : borrowedBooks){
-                System.out.println(" - " + book.showInfoBook());
+                System.out.println(" - " + book.getTitle());
             }
         }
     }

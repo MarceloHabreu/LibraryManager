@@ -35,6 +35,11 @@ public class Main {
         categories.add(dystopia);
         categories.add(science);
 
+        // Adding books to category
+        dystopia.addBook(book1);
+        dystopia.addBook(book4);
+        science.addBook(book2);
+
         // Creating the Library
         Library library = new Library("Seu Jão's Library", "789 Maple St", bookCollection, users, categories);
         System.out.println("Library: " + library.getName() + " and your address: " + library.getAddress());
@@ -68,10 +73,17 @@ public class Main {
         System.out.println("---------Removing borrowed book of user2---------");
         user2.removeBorrowedBook(book2);
         user2.showInfoUser();
+        System.out.println();
 
         // Listing books in a category
+        System.out.println("Info of category: " + dystopia.showInfoCategory());
         System.out.println("---------Listing books of category dystopia---------");
-        System.out.println(science.listBooks());
+        System.out.println(dystopia.listBooks());
+        System.out.println("---------Listing books of category dystopia after Removal 1 book---------");
+        dystopia.removeBook(book1);
+        System.out.println(dystopia.listBooks());
+
+
 
         // Testing a loan status update
         System.out.println("---------Status borrowed books---------");
